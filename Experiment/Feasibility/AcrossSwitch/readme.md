@@ -5,7 +5,7 @@ This directory is the evaluation of LoopGen's feasibility using BMv2 switches. T
 ## Environment
 The official P4 VM Ubuntu20.04. [Download](https://github.com/p4lang/tutorials?tab=readme-ov-file)
 
-## Run network
+## 1. Run network
 
 Download this directory in the P4-VM (suggesting the p4/tutorial/execise/ directory in the official VM).
 
@@ -15,14 +15,14 @@ Open a terminal, compile and run:
 
 If find any compiling errors related to p4utils, please delete it (rm -rf p4utils) and reinstall [P4utils](https://nsg-ethz.github.io/p4-utils/installation.html). 
 
-## Run controller
+## 2. Run controller
 
 Open another terminal
 
     sudo python3 controller.py
 
 
-## Start LoopGen
+## 3. Start LoopGen
 
 In the mininet terminal
 
