@@ -10,11 +10,11 @@ The version of [Lemon](https://github.com/f-555/Lemon) we obtained and used is i
   
 3. Start the BMv2-based Mininet experimental environment
 
-    sudo p4run
+    >sudo p4run
 
 4. Start the Lemon controller
    
-    sudu python3 /controlplane/lemon_controller/controller.py
+    >sudu python3 /controlplane/lemon_controller/controller.py
 
 ## Lemon Defense Test
 
@@ -34,6 +34,7 @@ In the Mininet host terminal, inject background traffic and attack traffic separ
 ## Result Analysis
 See the output of the controller. 
 Evaluate the system performance using two metrics: Precision and Recall
+
 
 
 
