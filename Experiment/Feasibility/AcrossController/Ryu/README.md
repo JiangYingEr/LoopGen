@@ -10,12 +10,12 @@ If ryu/app/ already contains these apps, plese **replace** them.
 
 Note that our codes only additionally contains the address-location mapping of h1 h2 h3, not changing the inherent address learning logic. This is to make the experiment easy to conduct.
 
-Start the controller (using simple_switch_13.py as an example)
+## 3. Start the controller (using simple_switch_13.py as an example)
 ```bash
 ryu-manager simple_switch_13.py
 ```
 
-Start mininet topology
+## 4. Start mininet topology
 ```bash
 sudo mn -c
 sudo python3 -E LoopGen_topo.py
