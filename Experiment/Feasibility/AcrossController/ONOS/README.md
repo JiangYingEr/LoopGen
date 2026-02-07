@@ -2,20 +2,21 @@
 
 ## 1. Download the source code of ONOS and install
 
+## 2.  Pase apps
 Copy the ReactiveForwarding.java app
 
 
-## 2. Start the controller
+## 3. Start the controller
 ```bash
 bazel run onos-local -- clean debug
 ```
 
-## 3. Start mininet topology
+## 4. Start mininet topology
 ```bash
 sudo mn -c
 sudo python3 -E LoopGen_topo.py
 ```
-## 4. Open the host terminal
+ Open the host terminal
 ```bash
 mininet> xterm h1 h2 h3
 ```
