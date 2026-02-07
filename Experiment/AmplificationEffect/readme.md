@@ -41,3 +41,7 @@ Use h1 to ping h2 and observe the RTT
 ### 3.3 Throughput
 
 h2 is the iperf server while h1 is the iperf client.
+
+## 4. Change topo
+
+Edit the Makefile file to specify the topology.
