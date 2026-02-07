@@ -27,10 +27,13 @@ In the mininet terminal
     xterm h1 h2 h3
 
 In h1 xterm, run
+
     python3 hack_h1_auto.py
 
 In h2 xterm, run
+
     python3 hack_h1_auto.py
 
 In h3 xterm, run
+
     python3 hack_h1_auto.py
