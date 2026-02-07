@@ -26,7 +26,7 @@ Open another terminal
 
 ### 3.1 LoopGen
 
-The flow rules in /rules have formed a forwarding loop for destination IP 10.0.0.8.
+The flow rules in /rules have formed a forwarding loop for destination IP 10.0.0.8. The example speed is 300 pps, you can change it at will.
 
     mininet> xterm h1
 
@@ -34,11 +34,11 @@ The flow rules in /rules have formed a forwarding loop for destination IP 10.0.0
 
 ### 3.2 non-looping DoS
 
-normalDoS.pcap uses 10.0.0.2 as the dst-IP, which will not be looped.
+normalDoS.pcap uses 10.0.0.2 as the dst-IP, which will not be looped. The example speed is 15000 pps, you can change it at will.
 
     mininet> xterm h1
 
-    h1>  tcpreplay -i eth0 -p 300 -l 0 normalDoS.pcap
+    h1>  tcpreplay -i eth0 -p 15000 -l 0 normalDoS.pcap
 
 
 ## 4.  Change topoloy
