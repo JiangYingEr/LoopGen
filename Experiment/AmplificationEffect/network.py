@@ -21,7 +21,7 @@ def config_network(p4):
     net.addHost('h2')
     net.addHost('h3')
 
-    d = '4.5ms' #BtAsiaPac
+    d = '0ms' #BtAsiaPac
     net.addLink('h1', 's1')
     net.addLink('h2', 's2')
     net.addLink('h3', 's3')
@@ -65,3 +65,4 @@ def main():
 
 if __name__ == '__main__':
     main()
+
