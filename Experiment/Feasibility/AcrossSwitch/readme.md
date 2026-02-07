@@ -22,7 +22,7 @@ Open another terminal
     sudo python3 controller.py
 
 
-## Send packet
+## Start LoopGen
 
 In the mininet terminal
 
@@ -39,3 +39,5 @@ In h2 xterm, run
 In h3 xterm, run
 
     python3 hack_h3_auto.py
+
+These scripts will automatically try until the forwarding loop is created.
