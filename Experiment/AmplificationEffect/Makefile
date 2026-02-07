@@ -10,7 +10,7 @@ all: run
 
 # start network
 run:
-	sudo python3 network-2node.py --p4 ${P4SRC_FILE}
+	sudo python3 network.py --p4 ${P4SRC_FILE}
 
 stop:
 	sudo mn -c
