@@ -35,10 +35,6 @@ normalDoS.pcap uses 10.0.0.2 as the dst-IP, which will not be looped. The exampl
     h1>  tcpreplay -i eth0 -p 15000 -l 0 normalDoS.pcap
 
 
-## 3.  Change topoloy
-
-If you want to use different topologies, plese edit the Makefile file and specify the topology file (.py) in it
-
-## 4. Observe cost
+## 3. Observe cost
 
 Use ping command to observe the RTT between h1 and h2. Make sure that the average RTT caused by LoopGen and non-looping DoS is at the same level. Then, the send speed of tcpreplay can indicate the attack cost.
