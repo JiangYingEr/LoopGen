@@ -26,10 +26,19 @@ Open another terminal
 
 ### 3.1 LoopGen
 
-The forwarding loop is already achieved in rules/. Therefore, you can directly launch LoopGen
+The flow rules in /rules have formed a forwarding loop for destination IP 10.0.0.8.
+
+    mininet> xterm h1
+
+    h1>  topreplay -i eth0 -p 300 -l 0 LoopGen.pcap
 
 ### 3.2 non-looping DoS
 
+normalDoS.pcap uses 10.0.0.2 as the dst-IP, which will not be looped.
+
+    mininet> xterm h1
+
+    h1>  topreplay -i eth0 -p 300 -l 0 normalDoS.pcap
 
 
 ## 4.  Change topoloy
