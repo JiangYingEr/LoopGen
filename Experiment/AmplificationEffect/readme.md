@@ -15,14 +15,8 @@ Open a terminal, compile and run:
 
 If find any compiling errors related to p4utils, please delete it (rm -rf p4utils) and reinstall [P4utils](https://nsg-ethz.github.io/p4-utils/installation.html). 
 
-## 2. Run controller
 
-Open another terminal
-
-    sudo python3 controller.py
-
-
-## 3. Start Evaluation
+## 2. Start Evaluation
 
 ### 3.1 LoopGen
 
