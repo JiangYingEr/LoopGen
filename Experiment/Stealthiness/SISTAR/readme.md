@@ -1,16 +1,13 @@
-# Sistar：Detecting DDoS Attacks and Performing Countermeasure Defense in the Programmable Data Plane Using Machine Learning
+# Evaluate LoopGen using Sistar
 
-## Introduction
-This document provides a detailed record of the testing procedure, environment configuration, and result verification methods for the SISTAR defense system.
- The document is divided into three main parts:
+The version of [SISTAR](https://github.com/hugo0819/SISTAR) we obtained and used is in Janurary 2026.
 
-1.Experimental Environment
+## Environment
 
-2.SISTAR Defense Test
-
-3.Result Verification
-
-### Experimental Environment
+1. Download SISTAR and enter its lemon_bmv2 directory.
+   
+2. Copy the files in This directory to the lemon_bmv2 directory. If there are files with the same name, **overwrite**
+3. 
 1.Train the DT-CTS Model
 > python3 DT-CTS.py
 
@@ -53,6 +50,7 @@ L 10000 ./202201011400.pcap &
 
 2.Check Flow Table Entries
 >simple_switch_CLI --thrift-port 9090 <<< "table_dump MyIngress.DDoS ternary"
+
 
 
 
