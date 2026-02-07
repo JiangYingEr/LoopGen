@@ -1,4 +1,6 @@
-# Start
+# BMv2
+
+This directory is the evaluation of LoopGen's feasibility using BMv2 switches. The evaluation using OpenFlow switches can refer to the AcrossControler directory.
 
 ## Environment
 The official P4 VM Ubuntu20.04. [Download](https://github.com/p4lang/tutorials?tab=readme-ov-file)
