@@ -1,20 +1,21 @@
 # Usage
 
 ## 1. Download the source code of POX and install
-copy
 
-## 2. Start the controller
+## 2. Pase apps
+
+## 3. Start the controller
 ```bash
 ./pox.py log.level --DEBUG openflow.of_01 --port=6633 forwarding.l2_learning
 ```
 
-## 3. Start mininet topology
+## 4. Start mininet topology
 ```bash
 sudo mn -c
 sudo python3 -E LoopGen_topo.py
 ```
 
-## 4. Open the host terminal
+Open the host terminal
 ```bash
 mininet> xterm h1 h2 h3
 ```
