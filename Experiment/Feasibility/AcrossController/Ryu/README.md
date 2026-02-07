@@ -1,5 +1,16 @@
 ## Usage
-Start the controller
+
+## Download the source code of Ryu and install
+
+## Paste apps
+
+Copy the simple_switch.py, simple_switch_12.py, simple_switch_13.py, simple_switch_14.py, simple_switch_15.py in this directory to the ryu/app/ directory in Ryu's source code.
+
+If ryu/app/ already contains these apps, plese **replace** them.
+
+Note that our codes only additionally contains the address-location mapping of h1 h2 h3, not changing the inherent address learning logic.
+
+Start the controller (using simple_switch_13.py as an example)
 ```bash
 ryu-manager simple_switch_13.py
 ```
