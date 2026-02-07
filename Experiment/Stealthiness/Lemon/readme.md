@@ -1,15 +1,8 @@
-# Lemon：Network-wide DDoS Detection with Per-flow Measurement and Complete Routing Coverage
+# Evaluate LoopGen using Lemon
 
-## Introduction
-This experiment aims to evaluate the effectiveness of the DDoS defense mechanism under different attack traffic ratios. The focus is on assessing the system’s ability to detect abnormal traffic, as well as the accuracy and stability of the defense strategy.
-The experiment is divided into three main parts：
-1.Experimental Environment
+The version of [Lemon](https://github.com/f-555/Lemon) we obtained and used is in Janurary 2026.
 
-2.Lemon Defense Test
-
-3.Result Analysis
-
-## Experimental Environment
+## Environment
 1.Enter the T4 topology configuration directory provided by the Lemon system and start the BMv2-based Mininet experimental environment
 >sudo p4run
 
@@ -29,3 +22,4 @@ tcpreplay -i <interface> --pps=3200 --duration=4 --loop=0 <attack_traffic.pcap>
 >sudo python3 controller.py
 
 2.Evaluate the system performance using two metrics: Precision and Recall
+
