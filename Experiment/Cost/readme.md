@@ -1,6 +1,6 @@
-# BMv2
+# Cost evaluation
 
-This directory is the evaluation of LoopGen's feasibility using BMv2 switches. The evaluation using OpenFlow switches can refer to the AcrossController directory.
+This directory is the evaluation of LoopGen's cost compared to non-looping DoS.
 
 ## Environment
 The official P4 VM Ubuntu20.04. [Download](https://github.com/p4lang/tutorials?tab=readme-ov-file)
