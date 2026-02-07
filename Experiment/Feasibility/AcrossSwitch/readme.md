@@ -32,8 +32,8 @@ In h1 xterm, run
 
 In h2 xterm, run
 
-    python3 hack_h1_auto.py
+    python3 hack_h2_auto.py
 
 In h3 xterm, run
 
-    python3 hack_h1_auto.py
+    python3 hack_h3_auto.py
