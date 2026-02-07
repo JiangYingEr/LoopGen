@@ -18,7 +18,6 @@ If find any compiling errors related to p4utils, please delete it (rm -rf p4util
 
 ## 2. Start Evaluation
 
-### 3.1 LoopGen
 
 The flow rules in /rules have formed a forwarding loop for destination IP 10.0.0.8. The example speed is 300 pps, you can change it at will.
 
@@ -26,15 +25,19 @@ The flow rules in /rules have formed a forwarding loop for destination IP 10.0.0
 
     h1>  tcpreplay -i eth0 -p 300 -l 0 LoopGen.pcap
 
-### 3.2 non-looping DoS
-
-normalDoS.pcap uses 10.0.0.2 as the dst-IP, which will not be looped. The example speed is 15000 pps, you can change it at will.
-
-    mininet> xterm h1
-
-    h1>  tcpreplay -i eth0 -p 15000 -l 0 normalDoS.pcap
 
 
-## 4.  Change topoloy
+## 3. Metric
 
-If you want to use different topologies, plese edit the Makefile file and specify the topology file (.py) in it
+
+### 3.1 Amplification factor
+
+Use tcpreplay to send only one packet and use wireshark to observe how many times it passed through s1-eth2.
+
+### 3.2 RTT
+
+Use h1 to ping h2 and observe the RTT
+
+### 3.3 Throughput
+
+h2 is the iperf server while h1 is the iperf client.
