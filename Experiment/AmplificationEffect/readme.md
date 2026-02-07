@@ -22,25 +22,15 @@ Open another terminal
     sudo python3 controller.py
 
 
-## 3. Start LoopGen
+## 3. Start Evaluation
 
-In the mininet terminal
+### 3.1 LoopGen
 
-    xterm h1 h2 h3
+The forwarding loop is already achieved in rules/. Therefore, you can directly launch LoopGen
 
-In h1 xterm, run
+### 3.2 non-looping DoS
 
-    python3 hack_h1_auto.py
 
-In h2 xterm, run
-
-    python3 hack_h2_auto.py
-
-In h3 xterm, run
-
-    python3 hack_h3_auto.py
-
-These scripts will automatically try until the forwarding loop is created.
 
 ## 4.  Change topoloy
 
