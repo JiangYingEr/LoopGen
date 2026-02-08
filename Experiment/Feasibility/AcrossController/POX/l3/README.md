@@ -1,4 +1,8 @@
 ## Usage
+
+copy the l3_learning.py file to pox/pox/forwarding/
+
+
 Start the controller
 ```bash
 ./pox.py log.level --DEBUG openflow.of_01 --port=6633 forwarding.l3_learning
