@@ -3,6 +3,9 @@
 sudo apt install openjdk-8-jdk maven -y
 ```
 
+
+[EventScope](https://github.com/bujcich/EventScope) is built upon ONOS, so before running it, replace the ReactiveForwarding.java file in onos/apps/fwd/src/main/java/org/onosproject/fwd/ with our [ReactiveForwarding.java](../../Feasibility/AcrossController/ONOS)
+
 ## Usage
 If the Soot version in the EventScope configuration file (EventScope-master/onos-infoflow/pom.xml) is too low, you may consider using the provided [pom.xml](pom.xml).
 
