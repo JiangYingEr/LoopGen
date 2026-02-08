@@ -1,6 +1,7 @@
 # Usage
 
-[SVHunter](https://github.com/xiaofen9/SVHunter) is built upon ONOS, so before running it, replace the ReactiveForwarding.java file in onos/apps/fwd/src/main/java/org/onosproject/fwd/ with our [ReactiveForwarding.java](../../Feasibility/AcrossController/ONOS)
+[SVHunter](https://github.com/xiaofen9/SVHunter) is built upon ONOS, so before running it, replace the ReactiveForwarding.java file in onos/apps/fwd/src/main/java/org/onosproject/fwd/ with our [ReactiveForwarding.java](../../Feasibility/AcrossController/ONOS).  It only contains necessary address-location mapping for h1 h2 h3, without any modification of the inherent address learning logic.
+
 
 If the Soot version in the SVHunter configuration file (SVHunter-master/tracer/pom.xml) is too low, you may consider using the provided [pom.xml](pom.xml).
 
