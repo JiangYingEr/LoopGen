@@ -2,7 +2,8 @@
 
 ## 1. Download the source code of POX and install
 
-## 2. Pase apps
+## 2. Patse apps
+copy the l2_learning.py file to pox/pox/forwarding/
 
 ## 3. Start the controller
 ```bash
