@@ -2,8 +2,8 @@
 
 ## 1. Download the source code of ONOS and install
 
-## 2.  Pase apps
-Copy the ReactiveForwarding.java app
+## 2.  Paste apps
+Copy the ReactiveForwarding.java app in this directory to onos/apps/fwd/src/main/java/org/onosproject/fwd/ and replace the original file
 
 
 ## 3. Start the controller
