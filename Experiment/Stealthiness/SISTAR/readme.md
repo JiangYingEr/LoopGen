@@ -9,11 +9,11 @@ The version of [SISTAR](https://github.com/hugo0819/SISTAR) we obtained and used
 2. Copy the files in This directory to the BMv2 directory. If there are files with the same name, **overwrite** them
 
 
-3.Start the BMv2 Software Switch
+3. Start the BMv2 Software Switch
 
     >make
 
-4.Load Flow Table Entries for Testing
+4. Load Flow Table Entries for Testing
 
     >./entry-h1-h2.sh
 
@@ -50,6 +50,7 @@ Before starting the test, we use Scapy to craft a specific attack packet and sav
 2.Check Flow Table Entries
 
     >simple_switch_CLI --thrift-port 9090 <<< "table_dump MyIngress.DDoS ternary"
+
 
 
 
