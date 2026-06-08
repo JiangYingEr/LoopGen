@@ -13,7 +13,7 @@ Start the timestamp constraint controller.
 ryu-manager time_constraint_13.py
 ```
 
-#### Start mininet topology (The remaining steps for [starting mininet topology](../ryu/README.md) remain the same.)
+#### Start mininet topology (The remaining steps for [starting mininet topology](../Feasibility/AcrossController/Ryu/README.md) remain the same.)
 ```bash
 sudo mn -c
 sudo python3 -E LoopGen_topo.py
