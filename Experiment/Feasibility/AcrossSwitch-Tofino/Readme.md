@@ -36,8 +36,11 @@ Then, run the commands below on each Tofino.
     make <your name>
     make install
 
-### 6. Run
+### 6. Run P4
 
     cd $SDE
     ./run_switchd.sh -p <program name>
 
+### Send packet and read counter
+
+    test.py
