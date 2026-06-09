@@ -1,6 +1,6 @@
 ### Explanation
 
-This directory corresponds to the results in Section 4.4
+This directory corresponds to the results in Section 4.4 (Table 2: Distribution Fitting Results)
 
 ### How to run
 
