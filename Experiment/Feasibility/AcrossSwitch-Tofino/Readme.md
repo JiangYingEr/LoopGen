@@ -34,3 +34,4 @@ Run the commands below on Tofino.
 
     cd $SDE
     ./run_switchd.sh -p <program name>
+
