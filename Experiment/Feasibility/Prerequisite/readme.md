@@ -5,3 +5,5 @@ Directly run the .py file, it will output the probability of p-topo, i.e., if ra
 ptopo.py: the probability that switches form a loop structure.
 
 Phost.py: the probability that hosts form a loop structure.
+
+LSandFT.py: the probability that hosts form a loop structure in Leaf-Spine and Fat-Tree.
