@@ -21,19 +21,19 @@ Then, run the commands below on each Tofino.
 ### 3. Set compile dir
 
     cd pkgsrc/p4-examples/programs
-    mkdir <your name>
-    cd <your name>
+    mkdir loop
+    cd loop
 
 ### 4. Set the compile file
 
     cmake $SDE/p4studio/ -DCMAKE_INSTALL_PREFIX=$SDE_INSTALL \
     -DCMAKE_MODULE_PATH=$SDE/cmake \
     -DP4_NAME=dfa \
-    -DP4_PATH=/root/bf-sde-9.10.0/pkgsrc/p4-examples/programs/<your name>/loop.p4
+    -DP4_PATH=/root/bf-sde-9.10.0/pkgsrc/p4-examples/programs/loop/loop.p4
 
 ### 5. Make
 
-    make <your name>
+    make loop
     make install
 
 ### 6. Run P4
