@@ -1,0 +1,2 @@
+- For RTT, the ping command can **directly** output the min, avg, max, and dev, so the ***.ipynb file(s)** directly contain the raw data.
+- For throughput, the Iperf command also directly output the final evaluated throughput, so the ***.ipynb file(s)** directly contain the raw data.
