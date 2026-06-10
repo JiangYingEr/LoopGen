@@ -26,13 +26,13 @@ mininet> xterm h1 h2 h3
 Send packets on each host terminal
 ```bash
 # Node: h1
-python3 LoopGen_packets.py h1-eth0 00:00:00:00:00:02
+python3 LoopGen_packets_l3.py h1-eth0 00:00:00:00:00:02
 
 # Node: h2
-python3 LoopGen_packets.py h2-eth0 00:00:00:00:00:03
+python3 LoopGen_packets_l3.py h2-eth0 00:00:00:00:00:03
 
 # Node: h3
-python3 LoopGen_packets.py h3-eth0 00:00:00:00:00:01
+python3 LoopGen_packets_l3.py h3-eth0 00:00:00:00:00:01
 ```
 Trigger attack
 ```bash
