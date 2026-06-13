@@ -1,7 +1,8 @@
 # Step-by-step Demonstration
 content
-[Ryu](##Ryu)
-[POX](##POX)
+1. [Ryu](#Ryu)
+
+2. [POX](#POX)
 
 ## Ryu
 First, clean up the remaining useless virtual network environment of Mininet.
