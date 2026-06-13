@@ -23,21 +23,21 @@ def wait_until_target_time():
     wait_seconds = (target_time - now).total_seconds()
     
     print(f"[*] current time: {now.strftime('%H:%M:%S')}")
-    print(f"[*] Lock the launch time: {target_time.strftime('%H:%M:%S')} (下一分钟的30秒)")
+    print(f"[*] Lock the launch time: {target_time.strftime('%H:%M:%S')} (The next minute's 30 seconds)")
     print(f"[*] Countdown waiting: {wait_seconds:.2f} 秒...")
     print("-" * 40)
     
     if wait_seconds > 0:
         time.sleep(wait_seconds)
     
-    print(f"\n[!] 时间到！({datetime.now().strftime('%H:%M:%S.%f')}) 发射！")
+    print(f"\n[!] Time's up ({datetime.now().strftime('%H:%M:%S.%f')})")
 
 def send_one_packet(iface, dst_ip):
     # Find the MAC address corresponding to the destination IP
     dst_mac = MAC_MAP.get(dst_ip, "ff:ff:ff:ff:ff:ff")
 
-    print(f"[*] 正在接口 {iface} 发送: {ATTACK_IP} -> {dst_ip}")
-    print(f"    (L2 封装: DstMAC={dst_mac}, SrcIP={ATTACK_IP})")
+    print(f"[*] {iface} send: {ATTACK_IP} -> {dst_ip}")
+    print(f"    (L2: DstMAC={dst_mac}, SrcIP={ATTACK_IP})")
     
     # Construct packets
     pkt = Ether(dst=dst_mac) / \
