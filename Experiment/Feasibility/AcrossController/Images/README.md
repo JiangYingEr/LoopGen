@@ -1,4 +1,7 @@
-# Step-by-step Demonstration
+# Step-by-step Demonstration]
+
+This experiment was performed on an Ubuntu 22.04 Desktop VM. As a prerequisite for the procedures outlined below, the underlying environment was preconfigured with Mininet, Python 3, and the Scapy packet-manipulation library. Additionally, three distinct SDN controllers were compiled and deployed directly from their respective source code repositories.
+
 1. [Ryu](#Ryu)
 2. [POX](#POX)
 
