@@ -1,7 +1,5 @@
 # Step-by-step Demonstration
-content
 1. [Ryu](#Ryu)
-
 2. [POX](#POX)
 
 ## Ryu
