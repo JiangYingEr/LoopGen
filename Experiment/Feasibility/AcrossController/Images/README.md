@@ -3,9 +3,10 @@
 First, clean up the remaining useless virtual network environment of Mininet.
 ```bash
 sudo mn -c
-![image]()
 ```
-Start the controller
+![image](https://github.com/JiangYingEr/LoopGen/blob/main/Experiment/Feasibility/AcrossController/Images/Ryu/1.png)
+
+Then, start the controller.
 ```bash
 ryu-manager simple_switch_13.py
 ```
