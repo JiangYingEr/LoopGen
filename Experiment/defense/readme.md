@@ -30,17 +30,17 @@ mininet> xterm h1 h2 h3
 4. Send packets in each host terminal
 
 In h1 xterm, run
-
+```
     python3 hack_h1_auto.py
-
+```
 In h2 xterm, run
-
+```
     python3 hack_h2_auto.py
-
+```
 In h3 xterm, run
-
+```
     python3 hack_h3_auto.py
-
+```
 ![](./figs/3open3hosts.png)
 
 5. We can see that the `loop_detect_13.py` successfully detected the loop.
@@ -74,17 +74,17 @@ mininet> xterm h1 h2 h3
 4. Send packets in each host terminal
 
 In h1 xterm, run
-
+```
     python3 hack_h1_auto.py
-
+```
 In h2 xterm, run
-
+```
     python3 hack_h2_auto.py
-
+```
 In h3 xterm, run
-
+```
     python3 hack_h3_auto.py
-
+```
 ![](./figs/3open3hosts.png)
 
 5. We can see that the `loop_detect_13.py` successfully detected the loop.
