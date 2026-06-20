@@ -8,10 +8,10 @@ The following instructions use the UDP packet as the example. If you want to try
 ![](./figs/0.png)
 
 2. Enter a new directory and start the topology:
-
-    cd tutorials/exercises/AmplificationEffect/
-    make
-
+```
+cd tutorials/exercises/AmplificationEffect/
+make
+```
 ![](./figs/1starttopology.png)
 
 Then, the topology is correctly started as follows.
@@ -33,11 +33,10 @@ You can see that there is no packet now.
 ![](./figs/4.5.png)
 
 2. In the mininet terminal
-
-    mininet> xterm h1
-
-    h1>  python3 send.py
-
+```
+mininet> xterm h1
+h1>  python3 send.py
+```
 
 ![](./figs/send.png)
 
@@ -52,48 +51,53 @@ Then, you can see that there are 85 packets captured by wireshark, which means t
 ### B. RTT
 
 1. First, open an h1 xterm
-
-    mininet> xterm h1
+```
+mininet> xterm h1
+```
 
 Use `tcpreplay` to inject attack packets.
 
-    h1> tcpreplay -i h1-eth0 -p 300 -l 0 LoopGen.pcap
-
+```
+h1> tcpreplay -i h1-eth0 -p 300 -l 0 LoopGen.pcap
+```
 
 ![](./figs/tcpreplay.png)
 
 2. Then, open a new h1 xterm and `ping` h2
-
-    h1> ping 10.0.0.2
-
+```
+h1> ping 10.0.0.2
+```
 
 ![](./figs/ping.png)
 
 ### 3.3 Throughput
 
 1. First, open an h1 xterm
-
-    mininet> xterm h1
+```
+mininet> xterm h1
+```
 
 Use `tcpreplay` to inject attack packets.
-
+```
     h1> tcpreplay -i h1-eth0 -p 300 -l 0 LoopGen.pcap
+```
 
 2. Then, open a new h1 xterm and an h2 xterm
-
+```
     mininet> xterm h1 h2
-
+```
 
 3. In the h2 xterm, start an `iperf` TCP server
-
+```
     h2> iperf -s
-
+```
 
 ![](./figs/h2server.png)
 
 4. In ther new h1 xterm (do **not** change the other h1 xterm running `tcpreplay`)
-
+```
     h1> iperf -c 10.0.0.2
+```
 
 ![](./figs/h1.png)
 
