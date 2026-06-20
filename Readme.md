@@ -16,3 +16,5 @@ p4
 ```
 
 ![](login.png)
+
+Then, for the experiment you want to try, please directly read the `readme.md` in the corresponding directory in `Experiment`.
