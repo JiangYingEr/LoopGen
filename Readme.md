@@ -10,5 +10,9 @@ We provided a VM image to help quickly reproduce our experiments.
 
 ### 2. Please import our VM using VirtualBox.
 
+Login in via the `p4` username, the password is
+```
+p4
+```
 
 ![](login.png)
