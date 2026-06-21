@@ -46,7 +46,7 @@ On the Tofino switch, run the commands below.
 ### 6. Run P4
 
     cd $SDE
-    ./run_switchd.sh -p <program name>
+    ./run_switchd.sh -p loop
 
 ### Send packet
 
