@@ -1,7 +1,7 @@
 ## Notes for Evaluators
 
 
-This folder documents a supplementary feasibility experiment on Barefoot Tofino switches. In the paper, this is a **minor** case study and is **not** required for reproducing the other results. Since our Tofino testbed is deployed inside the campus network and is currently accessible only to authorized users, we are applying for external access for evaluators.
+This folder documents a supplementary feasibility experiment on Barefoot Tofino switches. In the paper, this is a **MINOR** case study and is **NOT** required for reproducing the other results. Since our Tofino testbed is deployed inside the campus network and is currently accessible only to authorized users, we are applying for external access for evaluators.
 
 We would like to note that:
 - The experiment itself is lightweight and only involves fixed-port packet forwarding on Tofino switches.
