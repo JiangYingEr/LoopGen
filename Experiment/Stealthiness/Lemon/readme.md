@@ -1,42 +1,74 @@
-# Evaluate LoopGen using Lemon
+
 
 The version of [Lemon](https://github.com/f-555/Lemon) we obtained and used is in Janurary 2026.
 
-## Environment
+## Usage
 
-1. Download Lemon and enter its lemon_bmv2 directory.
-   
-2. Copy the files in This directory to the lemon_bmv2 directory. If there are files with the same name, **overwrite** them.
-  
-3. Start the BMv2-based Mininet experimental environment
+1. Open a terminal (entering the p4 directory by default)
 
-    >sudo p4run
+<div align="center">
+  <img src="./figs/0.png" width="80%" alt="">
+</div>
 
-4. Start the Lemon controller
-   
-    >sudu python3 /controlplane/lemon_controller/controller.py
+2. Start the BMv2-based Mininet experimental environment
 
-## Lemon Defense Test
+```
+cd tutorials/exercises/lemon/
 
-Download the background traffic from MAWI. What we use is the [202201011400.pcap](https://mawi.wide.ad.jp/mawi/samplepoint-F/2022/202201011400.html)
+sudo p4run
+```   
 
+<div align="center">
+  <img src="./figs/starttopology.png" width="80%" alt="">
+</div>
 
-Use a Python script to generate attack packets 
+3. Start attack
 
-    >python3 generatepcap.py
+The ``output-1000B.pcap`` is the attack traffic set and the [202201011400.pcap](https://mawi.wide.ad.jp/mawi/samplepoint-F/2022/202201011400.html) is the background traffic.
 
-In the Mininet host terminal, inject background traffic and attack traffic separately, ensuring they overlap in time
+```
+mininet> xterm h1 h1
+    h1> tcpreplay -i h1-eth0 --duration=4 output-1000B.pcap
+    h1> tcpreplay -i h1-eth0 --pps=3200 --duration=4 --loop=0 202201011400.pcap
+```
+<div align="center">
+  <img src="./figs/attack.png" width="80%" alt="">
+</div>
 
-    mininet> xterm h1 h1
-    h1> tcpreplay -i <interface> --duration=4 <background_traffic.pcap> &
-    h1> tcpreplay -i <interface> --pps=3200 --duration=4 --loop=0 <attack_traffic.pcap>
+4. Open a new terminal and start the Lemon controller
 
-## Result Analysis
-See the output of the controller. 
-Evaluate the system performance using two metrics: Precision and Recall
+```  
+sudo python3 controller.py
+```
+<div align="center">
+  <img src="./figs/controller.png" width="80%" alt="">
+</div>
 
+See the output of the controller. `10.0.0.8` is not in the output. We can try the attack multiple times.
 
+<div align="center">
+  <img src="./figs/res.png" width="80%" alt="">
+</div>
 
+5. Verify loop
 
+We can also verify whether the loop was established by sending only one attack packet.
+
+```
+h1> tcpreplay -i h1-eth0 -L 1 output-1000B.pcap
+
+```
+
+Then, open a new terminal and start wireshark
+
+```
+sudo wireshark
+```
+
+We can see that one packet was looped multiple times, which proves that the attack traffic was looped.
+
+<div align="center">
+  <img src="./figs/loop.png" width="80%" alt="">
+</div>
 
 
