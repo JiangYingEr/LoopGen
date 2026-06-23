@@ -1,26 +1,46 @@
-## 1. Start the Ryu controller
-Paste the switchfix.py to the ryu/app/ directory.
+## Usage
 
-Open a terminal (Controller Terminal).
+1. Open a terminal (entering the p4 directory by default)
+
+<div align="center">
+  <img src="./figs/0.png" width="80%" alt="">
+</div>
+
+
+2. Start the identify verification application
+
 
 ```plain
-sudo ryu-manager switchfix.py
+sudo ryu/ryu/app/ryu-manager switchfix.py
 ```
 
-## 2. Start the Mininet topology
+<div align="center">
+  <img src="./figs/startcontroller.png" width="80%" alt="">
+</div>
+
+
+3. Start the Mininet topology
 Open a second terminal (Topology Terminal).
 
 ```plain
+cd loopgenexp/identityverification/
+
 sudo python3 topology.py
 ```
 
-## 3. Open host xterms
+<div align="center">
+  <img src="./figs/starttopo.png" width="80%" alt="">
+</div>
+
+
+4. Open *6* host xterms
 
 ```plain
 mininet> xterm h1 h2 h3
+mininet> xterm h1 h2 h3
 ```
 
-## 4. Start the responder (host authentication responder) on each host
+5. Start the responder (host authentication responder) on each host
 
 These scripts are used to handle controller's identity verification
 
@@ -42,8 +62,12 @@ In the `h3` xterm:
 sudo python3 responder3.py h3-eth0
 ```
 
+<div align="center">
+  <img src="./figs/respond.png" width="80%" alt="">
+</div>
 
-## 5. Start LoopGen attack scripts
+
+6. Start LoopGen attack scripts
 In `h1` xterm run the h1 attack:
 
 ```plain
@@ -62,3 +86,8 @@ In `h3` xterm:
 sudo python3 hack_h3_auto.py
 ```
 
+7. Then, open a wireshark and monitor **s1-eth2**, you can see endless packets.
+
+<div align="center">
+  <img src="./figs/res.png" width="80%" alt="">
+</div>
