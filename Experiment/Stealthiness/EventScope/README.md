@@ -1,50 +1,65 @@
-## Environment
-```bash
-sudo apt install openjdk-8-jdk maven -y
+## Usage
+
+The default JDK is 11, so firstly, please switch to JDK 8.
+
+```
+export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
+export PATH=$JAVA_HOME/bin:$PATH
+java -version
 ```
 
+<div align="center">
+  <img src="./figs/jdk.png" width="80%" alt="">
+</div>
 
-[EventScope](https://github.com/bujcich/EventScope) is built upon ONOS, so before running it, replace the ReactiveForwarding.java file in onos/apps/fwd/src/main/java/org/onosproject/fwd/ with our [ReactiveForwarding.java](../../Feasibility/AcrossController/ONOS). It only contains necessary address-location mapping for h1 h2 h3, without any modification of the inherent address learning logic.
 
-## Usage
-If the Soot version in the EventScope configuration file (EventScope-master/onos-infoflow/pom.xml) is too low, you may consider using the provided [pom.xml](pom.xml).
-
-Compile the EventScope analysis tool
+1. Compile the EventScope analysis tool
 ```bash
 cd ~/EventScope-master/onos-infoflow
 mvn clean package -DskipTests
 export ANALYZER_JAR=$(pwd)/target/onos-infoflow-0.0.1-SNAPSHOT.jar
 ```
+<div align="center">
+  <img src="./figs/1.png" width="80%" alt="">
+</div>
+<div align="center">
+  <img src="./figs/2.png" width="80%" alt="">
+</div>
 
-Prepare the target app
+2. Prepare the target app
 ```bash
 cd ~/onos
 bazel build //apps/fwd:onos-apps-fwd-oar
-mkdir -p ~/eventscope_workdir/target_app
-cd ~/eventscope_workdir/target_app
-cp ~/onos/bazel-bin/apps/fwd/onos-apps-fwd-oar.oar ~/eventscope_workdir/target_app/fwd_app.zip
-unzip ~/eventscope_test/target_app/fwd_app.zip -d ~/eventscope_workdir/target_app/
+```
+<div align="center">
+  <img src="./figs/3.png" width="80%" alt="">
+</div>
+```
+mkdir -p ~/EventScope-master/target_app
+cd ~/EventScope-master/target_app
+cp ~/onos/bazel-bin/apps/fwd/onos-apps-fwd-oar.oar ~/EventScope-master/target_app/fwd_app.zip
+unzip ~/EventScope-master/target_app/fwd_app.zip -d ~/EventScope-master/target_app/
 ```
 
-Build an analytical environment
+3. Build an analytical environment
 ```bash
-cd ~/eventscope_workdir
+cd ~/EventScope-master
 
-# Create the expected directory structure for EventScope
+4. Create the expected directory structure for EventScope
 mkdir -p bin
 mkdir -p java_rt
 
-# Insert the class file of the target App
+5. Insert the class file of the target App
 APP_JAR=$(find ./target_app -name "onos-apps-fwd-*.jar" | head -n 1)
 echo "Found App Jar: $APP_JAR"
 
-# Copy and extract the target App to the bin directory
+6. Copy and extract the target App to the bin directory
 cp "$APP_JAR" bin/
 cd bin
 unzip -q -o *.jar
 rm *.jar
 
-# Put it into the Java runtime environment
+7. Put it into the Java runtime environment
 cd ..
 cp /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/rt.jar java_rt/
 cd java_rt
@@ -53,8 +68,17 @@ rm rt.jar
 cd ..
 ```
 
-Run static analysis
+8. Run static analysis
 ```bash
-cd ~/eventscope_workdir
+cd ~/EventScope-master
 java -jar $ANALYZER_JAR
 ```
+<div align="center">
+  <img src="./figs/-1.png" width="80%" alt="">
+</div>
+
+You can directly see the .pdf report 
+
+<div align="center">
+  <img src="./figs/-2.png" width="80%" alt="">
+</div>
