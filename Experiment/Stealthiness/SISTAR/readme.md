@@ -1,58 +1,64 @@
-# Evaluate LoopGen using Sistar
 
 The version of [SISTAR](https://github.com/hugo0819/SISTAR) we obtained and used is in Janurary 2026.
 
-## Environment
+## Usage
 
-1. Download SISTAR and enter its BMv2 directory.
-   
-2. Copy the files in This directory to the BMv2 directory. If there are files with the same name, **overwrite** them
+1. Open a terminal (entering the p4 directory by default)
 
+<div align="center">
+  <img src="./figs/0.png" width="80%" alt="">
+</div>
 
-3. Start the BMv2 Software Switch
+3. Start the BMv2-based Mininet experimental environment
 
-    >make
+```
+cd tutorials/exercises/sistar/
 
-4. Load Flow Table Entries for Testing
+make
+```   
 
-    >./entry-h1-h2.sh
-
-
-
-## SISTAR Defense Test
-Before starting the test, we use Scapy to craft a specific attack packet and save it as a .pcap file, so that it can later be replayed at high speed using tcpreplay.
-
-    >python3 packet_gen.py
-
-1.Install Flow Rules for the S1–S2–S3 Triangle Loop Topology
-
-    >simple_switch_CLI --thrift-port 9090 <<< "table_add MyIngress.ipv4_lpm MyIngress.ipv4_forward 10.0.99.99/32 => 00:00:00:00:02:00 2"
-
-    >simple_switch_CLI --thrift-port 9091 <<< "table_add MyIngress.ipv4_lpm MyIngress.ipv4_forward 10.0.99.99/32 => 00:00:00:00:03:00 3"
-
-    >simple_switch_CLI --thrift-port 9092 <<< "table_add MyIngress.ipv4_lpm MyIngress.ipv4_forward 10.0.99.99/32 => 00:00:00:00:01:00 4"
-
-2.Modify and Deploy the Defense Mechanism Based on the Loop
-
-    >./run_defense.sh
-
-3.Send Background Traffic and Attack Traffic
-
-    >h1 tcpreplay -i eth0 -p 15000 -L 10000 ./202201011400.pcap &
-
-    >tcpreplay -i eth0 -p 1000 -l 20000 attack.pcap
-
-### Result Verification
-1.Open Wireshark and Monitor Interface s1-eth2
-
-    >sudo wireshark
-
-2.Check Flow Table Entries
-
-    >simple_switch_CLI --thrift-port 9090 <<< "table_dump MyIngress.DDoS ternary"
+<div align="center">
+  <img src="./figs/starttopo.png" width="80%" alt="">
+</div>
 
 
+4. Open a new terminal, install flow rules for the S1鈥揝2鈥揝3 triangle loop topology
+```
+cd tutorials/exercises/sistar/
 
+simple_switch_CLI --thrift-port 9090 <<< "table_add MyIngress.ipv4_lpm MyIngress.ipv4_forward 10.0.99.99/32 => 00:00:00:00:02:00 2"
+
+simple_switch_CLI --thrift-port 9091 <<< "table_add MyIngress.ipv4_lpm MyIngress.ipv4_forward 10.0.99.99/32 => 00:00:00:00:03:00 3"
+
+simple_switch_CLI --thrift-port 9092 <<< "table_add MyIngress.ipv4_lpm MyIngress.ipv4_forward 10.0.99.99/32 => 00:00:00:00:01:00 4"
+```
+
+<div align="center">
+  <img src="./figs/rules.png" width="80%" alt="">
+</div>
+
+
+5. Deploy the defense mechanism
+```
+bash run_defense.sh
+```
+
+<div align="center">
+  <img src="./figs/defense.png" width="80%" alt="">
+</div>
+
+
+6. Open 2 xterm, and send background traffic and attack traffic
+```
+tcpreplay -i eth0 -p 15000 -L 10000 ./202201011400.pcap &
+
+tcpreplay -i eth0 -p 1000 -l 20000 attack.pcap
+```
+Then, we can open wireshark and monitor s1-eth2. We can find that the attack packets (dst=`10.0.99.99`) were looped.
+
+<div align="center">
+  <img src="./figs/res.png" width="80%" alt="">
+</div>
 
 
 
