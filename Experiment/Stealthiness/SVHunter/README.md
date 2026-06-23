@@ -1,6 +1,6 @@
 # Usage
 
-[SVHunter](https://github.com/xiaofen9/SVHunter)閵?
+[SVHunter](https://github.com/xiaofen9/SVHunter)
 
 If the Soot version in the SVHunter configuration file (SVHunter-master/tracer/pom.xml) is too low, you may consider using the provided [pom.xml](pom.xml).
 
