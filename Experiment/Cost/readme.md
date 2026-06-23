@@ -2,7 +2,9 @@
 
 1. Open a terminal (entering the p4 directory by defailt). 
 
-![](./figs/0.png)
+<div align="center">
+  <img src="./figs/0.png" width="80%" alt="">
+</div>
 
 2. Enter a new directory and start the topology:
 ```
@@ -10,11 +12,15 @@
 
     make
 ```
-![](./figs/1starttopology.png)
+<div align="center">
+  <img src="./figs/1starttopology.png" width="80%" alt="">
+</div>
 
 Then, the topology is correctly started as follows.
 
-![](./figs/1.5.png)
+<div align="center">
+  <img src="./figs/1.5.png" width="80%" alt="">
+</div>
 
 
 ### Launch LoopGen
@@ -28,14 +34,18 @@ Use `tcpreplay` to inject attack packets.
     h1> tcpreplay -i h1-eth0 -p 300 -l 0 LoopGen.pcap
 
 
-![](./figs/tcpreplay.png)
+<div align="center">
+  <img src="./figs/tcpreplay.png" width="80%" alt="">
+</div>
 
 2. Then, open a new h1 xterm and `ping` h2
 ```
     h1> ping 10.0.0.2
 ```
 
-![](./figs/ping.png)
+<div align="center">
+  <img src="./figs/ping.png" width="80%" alt="">
+</div>
 
 ### Launch normal DoS
 
@@ -53,11 +63,15 @@ Use `tcpreplay` to inject attack packets. Note: use **normalDoS.pcap** instead o
     h1> ping 10.0.0.2
 ```
 5000pps, normal DoS
-![](./figs/5000.png)
+<div align="center">
+  <img src="./figs/5000.png" width="80%" alt="">
+</div>
 
 
 15000pps, normal DoS
-![](./figs/15000.png)
+<div align="center">
+  <img src="./figs/15000.png" width="80%" alt="">
+</div>
 
 
 
