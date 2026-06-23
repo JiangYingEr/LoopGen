@@ -2,18 +2,24 @@
 
 1. Open a terminal (entering the p4 directory by defailt). 
 
-![](./figs/0.png)
+<div align="center">
+  <img src="./figs/0.png" width="80%" alt="">
+</div>
 
 2. Enter a new directory and start the topology:
 ```
     cd tutorials/exercises/LoopGen/
     make
 ```
-![](./figs/1starttopology.png)
+<div align="center">
+  <img src="./figs/1starttopology.png" width="80%" alt="">
+</div>
 
 Then, the topology is correctly started as follows.
 
-![](./figs/1.5.png)
+<div align="center">
+  <img src="./figs/1.5.png" width="80%" alt="">
+</div>
 
 If find any compiling errors, please try:
 ```
@@ -25,7 +31,9 @@ If find any compiling errors, please try:
     cd tutorials/exercises/LoopGen/
     sudo python3 controller.py
 ```
-![](./figs/2startcontroller.png)
+<div align="center">
+  <img src="./figs/2startcontroller.png" width="80%" alt="">
+</div>
 
 4. In the mininet terminal
 ```
@@ -43,7 +51,9 @@ In h3 xterm, run
 ```
     python3 hack_h3_auto.py
 ```
-![](./figs/3open3hosts.png)
+<div align="center">
+  <img src="./figs/3open3hosts.png" width="80%" alt="">
+</div>
 
 Please **wait** until they finished the attack.
 
@@ -52,10 +62,14 @@ Please **wait** until they finished the attack.
 sudo wireshark
 ```
 
-![](./figs/4startwireshark.png)
+<div align="center">
+  <img src="./figs/4startwireshark.png" width="80%" alt="">
+</div>
 
 You can see that the attack packets are looped continuously.
 
-![](./figs/5.png)
+<div align="center">
+  <img src="./figs/5.png" width="80%" alt="">
+</div>
 
 
