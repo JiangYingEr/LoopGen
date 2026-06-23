@@ -2,7 +2,9 @@
 
 1. Open a terminal (entering the p4 directory by defailt). 
 
-![](./figs/0.png)
+<div align="center">
+  <img src="./figs/0.png" width="80%" alt="">
+</div>
 
 #### Method 1: Loop Detection Countermeasure:
 
@@ -11,7 +13,9 @@
 ryu-manager --observe-links ryu/ryu/app/loop_detect_13.py
 ```
 
-![](./figs/1.png)
+<div align="center">
+  <img src="./figs/1.png" width="80%" alt="">
+</div>
 
 
 2. Open a new terminal and start mininet topology
@@ -19,7 +23,9 @@ ryu-manager --observe-links ryu/ryu/app/loop_detect_13.py
 cd loopgenexp/ControllerFeasibility-ryu/
 sudo python3 -E LoopGen_topo.py
 ```
-![](./figs/2starttopology.png)
+<div align="center">
+  <img src="./figs/2starttopology.png" width="80%" alt="">
+</div>
 
 
 3. Open the host terminals in mininet
@@ -41,11 +47,15 @@ In h3 xterm, run
 ```
     python3 hack_h3_auto.py
 ```
-![](./figs/3open3hosts.png)
+<div align="center">
+  <img src="./figs/3open3hosts.png" width="80%" alt="">
+</div>
 
 5. We can see that the `loop_detect_13.py` successfully detected the loop.
 
-![](./figs/defense1.png)
+<div align="center">
+  <img src="./figs/defense1.png" width="80%" alt="">
+</div>
 
 #### Method 2: Time Constraints Countermeasure:
 
@@ -55,7 +65,9 @@ In h3 xterm, run
 ryu-manager --observe-links ryu/ryu/app/time_constraint_13.py
 ```
 
-![](./figs/2.png)
+<div align="center">
+  <img src="./figs/2.png" width="80%" alt="">
+</div>
 
 
 2. Open a new terminal and start mininet topology
@@ -63,7 +75,9 @@ ryu-manager --observe-links ryu/ryu/app/time_constraint_13.py
 cd loopgenexp/ControllerFeasibility-ryu/
 sudo python3 -E LoopGen_topo.py
 ```
-![](./figs/2starttopology.png)
+<div align="center">
+  <img src="./figs/2starttopology.png" width="80%" alt="">
+</div>
 
 
 3. Open the host terminals in mininet
@@ -85,8 +99,12 @@ In h3 xterm, run
 ```
     python3 hack_h3_auto.py
 ```
-![](./figs/3open3hosts.png)
+<div align="center">
+  <img src="./figs/3open3hosts.png" width="80%" alt="">
+</div>
 
 5. We can see that the `loop_detect_13.py` successfully detected the loop.
 
-![](./figs/defense2.png)
+<div align="center">
+  <img src="./figs/defense2.png" width="80%" alt="">
+</div>
