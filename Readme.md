@@ -21,6 +21,7 @@ Then, for the experiment you want to try, please directly read the `readme.md` i
 
 
 ## Claims and Corresponding Experiments
+This paper has the following five main claims. We list the corresponding experiment directories below. To conduct a concrete experiment, please directly read the corresponding `readme.md`.
 
 ### `C1` Feasibility: 
 - `Experiment/Feasibility/Prerequisite/readme.md`
@@ -45,5 +46,4 @@ Then, for the experiment you want to try, please directly read the `readme.md` i
 ### `C5` Controller-side defenses: 
 - `Experiment/defense/readme.md`.
 
-# How to run
-Please refer to the Experiment directory
+
