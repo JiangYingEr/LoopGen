@@ -267,7 +267,7 @@ def analyze_exact_probabilities(
     mask_limit = 1 << len(switch_names)
 
     for mask in range(1, mask_limit):
-        support_size = mask.bit_count()
+        support_size = bin(mask).count("1")
         if support_size < 3:
             continue
         if not subset_contains_successful_triple(mask, triple_masks):

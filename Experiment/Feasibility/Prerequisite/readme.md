@@ -4,12 +4,29 @@ Directly run the .py file, it will output the probability of p-topo, i.e., if ra
 
 ptopo.py: the probability that switches form a loop structure. (This file is useless after the rebuttal)
 
-#### Phost.py: the probability that hosts form a loop structure.
+ Open a terminal (entering the p4 directory by default)
+
 <div align="center">
-  <img src="./figs/ptopo.png" width="80%" alt="">
+  <img src="./figs/0.png" width="80%" alt="">
+</div>
+
+```
+cd Prerequisite
+```
+
+#### Phost.py: the probability that hosts form a loop structure.
+```
+python3 Phost.py
+```
+<div align="center">
+  <img src="./figs/phost.png" width="80%" alt="">
 </div>
 
 #### LSandFT.py: the probability that hosts form a loop structure in Leaf-Spine and Fat-Tree.
+
+```
+python3 LSandFT.py
+```
 <div align="center">
   <img src="./figs/fattree.png" width="80%" alt="">
 </div>
