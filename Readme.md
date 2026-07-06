@@ -8,7 +8,7 @@ We provided a VM image to help quickly reproduce our experiments.
 
 ### 1. Please install [VirtualBox](https://www.virtualbox.org/) on your machine
 
-### 2. Please [download our VM](https://drive.google.com/file/d/1QZDRKwFu1cSst5gQUEyceoV077Lv40Np/view?usp=sharing) and open it using VirtualBox.
+### 2. Please [download our VM](https://drive.google.com/file/d/1KFPkP0iw5twBaes11d6QSwhpViCaba7s/view?usp=sharing) and open it using VirtualBox.
 
 Login in via the `p4` username, the password is
 ```
