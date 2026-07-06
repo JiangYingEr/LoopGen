@@ -22,7 +22,7 @@ make
 </div>
 
 
-4. Open a new terminal, install flow rules for the S1鈥揝2鈥揝3 triangle loop topology
+4. Open a new terminal, install flow rules for the S1-S2-S3 triangle loop topology
 ```
 cd tutorials/exercises/sistar/
 
@@ -53,6 +53,12 @@ bash run_defense.sh
 tcpreplay -i eth0 -p 15000 -L 10000 ./202201011400.pcap &
 
 tcpreplay -i eth0 -p 1000 -l 20000 attack.pcap
+```
+
+In case that you cannot find the `attack.pcap`, please run `packet_gen.py` to generate it
+
+```
+python3 packet_gen.py
 ```
 Then, we can open wireshark and monitor s1-eth2. We can find that the attack packets (dst=`10.0.99.99`) were looped.
 
