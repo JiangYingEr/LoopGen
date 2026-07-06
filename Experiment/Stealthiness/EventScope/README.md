@@ -77,7 +77,7 @@ java -jar $ANALYZER_JAR
   <img src="./figs/-1.png" width="80%" alt="">
 </div>
 
-You can directly see the .pdf report 
+You can directly see the `event-flow-graph.pdf` report 
 
 <div align="center">
   <img src="./figs/-2.png" width="80%" alt="">
