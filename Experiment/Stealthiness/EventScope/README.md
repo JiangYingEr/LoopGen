@@ -82,3 +82,9 @@ You can directly see the .pdf report
 <div align="center">
   <img src="./figs/-2.png" width="80%" alt="">
 </div>
+
+We can see that the attack does not introduce new event listeners or data plane interaction paths in the graph. This is because it merely adds static mappings to the existing event handling logic, thereby altering the forwarding semantics but not the event flow structure. Therefore, EventScope cannot detect it.
+
+<div align="center">
+  <img src="./figs/-3.png" width="80%" alt="">
+</div>
