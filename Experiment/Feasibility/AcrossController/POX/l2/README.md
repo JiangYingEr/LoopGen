@@ -10,6 +10,7 @@
 
 2. Start the controller
 ```bash
+cd pox
 ./pox.py log.level --DEBUG openflow.of_01 --port=6633 forwarding.l2_learning
 ```
 
