@@ -1,0 +1,76 @@
+import numpy as np
+import scipy.stats as stats
+import pandas as pd
+import warnings
+import re
+from distfit import distfit
+import matplotlib.pyplot as plt
+
+warnings.filterwarnings('ignore')
+
+
+def read_float_file(file_path):
+
+    float_data = []
+    with open(file_path, "r", encoding="utf-8") as f:
+        lines = f.readlines()
+        for line_num, line in enumerate(lines, 1):
+            clean_line = line.strip()
+            if not clean_line:
+                continue
+            try:
+                num = float(clean_line)
+                num = num / 4000
+                float_data.append(num)
+            except ValueError:
+                print(f"{line_num} '{clean_line}' ")
+    cleaned_data, clean_log = clean_data(float_data)
+    return cleaned_data
+    
+def clean_data(raw_data, iqr_threshold=1.5):
+
+    log = []
+    raw_len = len(raw_data)
+
+    data = np.array(raw_data, dtype=np.float64)
+    data = data[np.isfinite(data)]  
+
+    data = data[data >= 0]
+
+
+    if len(data) >= 4:  
+        Q1 = np.percentile(data, 25)
+        Q3 = np.percentile(data, 75)
+        IQR = Q3 - Q1
+        lower_bound = Q1 - iqr_threshold * IQR
+        upper_bound = Q3 + iqr_threshold * IQR
+        data = data[(data >= lower_bound) & (data <= upper_bound)]
+
+    clean_len = len(data)
+    mean_1d = np.mean(data)  
+    std_sample_1d = np.std(data, ddof=1)  
+    print(f"mean: {mean_1d}")
+    print(f"std: {std_sample_1d}")
+
+
+    return data, log
+
+
+
+def main(file_path):
+
+    cleaned_data = read_float_file(file_path)
+
+    X = np.array(cleaned_data)
+    dfit = distfit(distr=['norm', 't', 'genextreme', 'gamma', 'lognorm', 'beta', 'loggamma'], n_boots=100, stats='ks')
+
+    dfit.fit_transform(X)
+    
+    print("The best distribution :")
+    print(dfit.model)
+
+
+if __name__ == "__main__":
+    FILE_PATH = "tc.txt"
+    main(FILE_PATH)
+    
