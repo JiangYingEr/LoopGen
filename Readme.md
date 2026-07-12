@@ -4,11 +4,14 @@ Address learning is a fundamental SDN service that maintains a dynamic mapping f
 
 # How to run
 
-We provided a VM image to help quickly reproduce our experiments.
+
+We provided a VM image to help quickly reproduce our experiments. All codes and dependencies have been installed on the VM. All your need is to follows the instructions in `Experiment`.
 
 ### 1. Please install [VirtualBox](https://www.virtualbox.org/) on your machine
 
-### 2. Please [download our VM](https://drive.google.com/file/d/1KFPkP0iw5twBaes11d6QSwhpViCaba7s/view?usp=sharing) and open it using VirtualBox.
+### 2. Please [download our VM](https://zenodo.org/records/21307319) and open it using VirtualBox. The `.ova` file is the VM.
+
+[Here is an example about how to import ova using Virtualbox](https://ubuntu.com/docs/public-images/public-images-how-to/run-an-ova-using-virtualbox/)
 
 Login in via the `p4` username, the password is
 ```
