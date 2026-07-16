@@ -7,6 +7,8 @@ Address learning is a fundamental SDN service that maintains a dynamic mapping f
 
 We provided a VM image to help quickly reproduce our experiments. All codes and dependencies have been installed on the VM. All your need is to follows the instructions in `Experiment`.
 
+
+
 ### 1. Please install [VirtualBox](https://www.virtualbox.org/) on your machine
 
 ### 2. Please [download our VM](https://zenodo.org/records/21307319) and open it using VirtualBox. The `.ova` file is the VM.
@@ -21,6 +23,8 @@ p4
 ![](login.png)
 
 Then, for the experiment you want to try, please directly read the `readme.md` in the corresponding directory in `Experiment`.
+
+If you want to build the entire environment from scratch, please see `BuildFromScratch.md`.
 
 
 ## Claims and Corresponding Experiments
