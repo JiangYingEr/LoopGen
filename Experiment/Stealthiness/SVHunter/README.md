@@ -41,6 +41,8 @@ java -jar target/SVHunter-Tracer-0.1-SNAPSHOT-jar-with-dependencies.jar \
     config/onosDFMethodList.xml
 ```
 
+Note: this step may takes 15-20 mins.
+
 <div align="center">
   <img src="./figs/jar.png" width="80%" alt="">
 </div>
