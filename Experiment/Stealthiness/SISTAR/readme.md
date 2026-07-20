@@ -55,7 +55,7 @@ bash run_defense.sh
 ```
 tcpreplay -i eth0 -p 15000 -L 10000 ./202201011400.pcap &
 
-tcpreplay -i eth0 -p 1000 -l 20000 attack.pcap
+tcpreplay -i eth0 -p 1000 -L 20000 attack.pcap
 ```
 
 In case that you cannot find the `attack.pcap`, please run `packet_gen.py` to generate it
@@ -63,7 +63,14 @@ In case that you cannot find the `attack.pcap`, please run `packet_gen.py` to ge
 ```
 python3 packet_gen.py
 ```
-Then, we can open wireshark and monitor s1-eth2. We can find that the attack packets (dst=`10.0.99.99`) were looped.
+
+Then, we can open wireshark and monitor s1-eth2. After that, inject one attack packet 
+```
+
+tcpreplay -i eth0 -p 1000 -L 1 attack.pcap
+```
+
+ We can find that the attack packets (dst=`10.0.99.99`) were looped.
 
 <div align="center">
   <img src="./figs/res.png" width="80%" alt="">
