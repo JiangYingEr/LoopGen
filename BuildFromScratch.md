@@ -327,16 +327,16 @@ Prepare the forwarding app and the implementation jars expected by `onos-infoflo
 export ANALYZER_JAR=~/EventScope-master/onos-infoflow/target/onos-infoflow-0.0.1-SNAPSHOT.jar
 
 mkdir -p ~/EventScope-master/target_app
-cp ~/onos/bazel-bin/apps/fwd/onos-apps-fwd-oar.oar \
+sudo cp ~/onos/bazel-bin/apps/fwd/onos-apps-fwd-oar.oar \
    ~/EventScope-master/target_app/fwd_app.zip
 
 cd ~/EventScope-master/target_app
 unzip -q -o fwd_app.zip
 
 mkdir -p ~/EventScope-master/onos-infoflow/bin-impl
-cp ~/onos/bazel-bin/core/api/libonos-api.jar \
+sudo cp ~/onos/bazel-bin/core/api/libonos-api.jar \
    ~/EventScope-master/onos-infoflow/bin-impl/
-cp ~/onos/bazel-bin/core/net/libonos-core-net.jar \
+sudo cp ~/onos/bazel-bin/core/net/libonos-core-net.jar \
    ~/EventScope-master/onos-infoflow/bin-impl/
 
 cd ~/EventScope-master/onos-infoflow/bin-impl
